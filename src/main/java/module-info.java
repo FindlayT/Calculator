@@ -4,6 +4,6 @@ module com.findlayt.calculator {
 
     requires org.controlsfx.controls;
 
-    opens com.findlayt.calculator to javafx.fxml;
+    opens com.findlayt.calculator.ui to javafx.fxml;
     exports com.findlayt.calculator;
 }
