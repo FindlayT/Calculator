@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.findlayt.calculator;
 
 import javafx.application.Application;
 

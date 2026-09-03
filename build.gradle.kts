@@ -6,7 +6,7 @@ plugins {
     id("org.beryx.jlink") version "2.25.0"
 }
 
-group = "com.example"
+group = "com.findlayt"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -26,8 +26,8 @@ tasks.withType<JavaCompile> {
 }
 
 application {
-    mainModule.set("com.example.calculator")
-    mainClass.set("com.example.calculator.Launcher")
+    mainModule.set("com.findlayt.calculator")
+    mainClass.set("com.findlayt.calculator.Launcher")
 }
 
 javafx {
