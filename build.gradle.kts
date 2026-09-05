@@ -13,7 +13,7 @@ repositories {
     mavenCentral()
 }
 
-val junitVersion = "5.12.1"
+val junitVersion = "6.1.3"
 
 java {
     toolchain {
