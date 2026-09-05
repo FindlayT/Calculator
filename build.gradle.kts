@@ -36,7 +36,7 @@ javafx {
 }
 
 dependencies {
-    implementation("org.controlsfx:controlsfx:11.2.1")
+    implementation("org.controlsfx:controlsfx:11.2.4")
     testImplementation(platform("org.junit:junit-bom:${junitVersion}"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
