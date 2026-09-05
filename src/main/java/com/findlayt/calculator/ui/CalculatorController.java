@@ -1,7 +1,9 @@
 package com.findlayt.calculator.ui;
 
 import com.findlayt.calculator.engine.CalculatorEngine;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
@@ -20,17 +22,22 @@ public class CalculatorController {
     }
 
     @FXML
-    protected void onDigitClick() {
+    protected void onDigitClick(ActionEvent event) {
+        String number = ((Button) event.getSource()).getText();
+        engine.appendDigit(number);
         updateDisplay();
     }
 
     @FXML
-    protected void onOperatorClick() {
+    protected void onOperatorClick(ActionEvent event) {
+        String operator = ((Button) event.getSource()).getText();
+        engine.appendOperator(operator);
         updateDisplay();
     }
 
     @FXML
     protected void onEqualsClick() {
+        //engine.calculate
         updateDisplay();
     }
 
