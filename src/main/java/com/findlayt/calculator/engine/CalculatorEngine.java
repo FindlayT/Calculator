@@ -28,7 +28,7 @@ public class CalculatorEngine {
 
     public void calculate() {
         List<Token> tokenisedDisplay = Tokeniser.tokenise(display);
-        // parse and set display to computed value
+        display = Parser.parse(tokenisedDisplay);
     }
 
     public void clear() {
