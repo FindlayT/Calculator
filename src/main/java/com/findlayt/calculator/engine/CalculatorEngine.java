@@ -1,5 +1,6 @@
 package com.findlayt.calculator.engine;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -23,6 +24,11 @@ public class CalculatorEngine {
 
     public void appendOperator(String operator) {
         display = display + operator;
+    }
+
+    public void calculate() {
+        List<Token> tokenisedDisplay = Tokeniser.tokenise(display);
+        display = Parser.parse(tokenisedDisplay);
     }
 
     public void clear() {

@@ -37,7 +37,7 @@ public class CalculatorController {
 
     @FXML
     protected void onEqualsClick() {
-        //engine.calculate
+        engine.calculate();
         updateDisplay();
     }
 
