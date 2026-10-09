@@ -1,7 +1,7 @@
 plugins {
     java
     application
-    id("org.javamodularity.moduleplugin") version "2.0.1"
+    id("org.javamodularity.moduleplugin") version "2.1.0"
     id("org.openjfx.javafxplugin") version "0.1.0"
     id("org.beryx.jlink") version "4.1.1"
 }
@@ -36,7 +36,7 @@ javafx {
 }
 
 dependencies {
-    implementation("org.controlsfx:controlsfx:11.2.4")
+    implementation("org.controlsfx:controlsfx:11.2.5")
     testImplementation(platform("org.junit:junit-bom:${junitVersion}"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
