@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 
 /**
  * wires FXML events to {@link CalculatorEngine} and updates the display.
@@ -14,10 +16,49 @@ public class CalculatorController {
     private final CalculatorEngine engine = new CalculatorEngine();
 
     @FXML
+    private VBox root;
+
+    @FXML
     private Label display;
 
     @FXML
     private void initialize() {
+        updateDisplay();
+        root.requestFocus();
+    }
+
+    @FXML
+    private void onKeyPressed(KeyEvent event) {
+        switch (event.getCode()) {
+            case DIGIT0, NUMPAD0 -> keyPressedDigitHelper("0");
+            case DIGIT1, NUMPAD1 -> keyPressedDigitHelper("1");
+            case DIGIT2, NUMPAD2 -> keyPressedDigitHelper("2");
+            case DIGIT3, NUMPAD3 -> keyPressedDigitHelper("3");
+            case DIGIT4, NUMPAD4 -> keyPressedDigitHelper("4");
+            case DIGIT5, NUMPAD5 -> keyPressedDigitHelper("5");
+            case DIGIT6, NUMPAD6 -> keyPressedDigitHelper("6");
+            case DIGIT7, NUMPAD7 -> keyPressedDigitHelper("7");
+            case DIGIT8, NUMPAD8 -> keyPressedDigitHelper("8");
+            case DIGIT9, NUMPAD9 -> keyPressedDigitHelper("9");
+            case ADD, PLUS -> keyPressedOperatorHelper("+");
+            case SUBTRACT, MINUS -> keyPressedOperatorHelper("-");
+            case MULTIPLY, ASTERISK -> keyPressedOperatorHelper("×");
+            case DIVIDE, SLASH -> keyPressedOperatorHelper("÷");
+            case PERIOD, DECIMAL -> keyPressedOperatorHelper(".");
+            case ENTER, EQUALS -> { engine.calculate(); updateDisplay(); }
+            case BACK_SPACE, DELETE -> { engine.clear(); updateDisplay(); }
+        }
+    }
+
+    @FXML
+    private void keyPressedDigitHelper(String digit) {
+        engine.appendDigit(digit);
+        updateDisplay();
+    }
+
+    @FXML
+    private void keyPressedOperatorHelper(String operator) {
+        engine.appendOperator(operator);
         updateDisplay();
     }
 
