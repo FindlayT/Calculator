@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class CalculatorApp extends Application {
     @Override
@@ -13,6 +14,8 @@ public class CalculatorApp extends Application {
         FXMLLoader loader = new FXMLLoader(
                 CalculatorApp.class.getResource("ui/calculator-view.fxml"));
         Scene scene = new Scene(loader.load(), 320, 480);
+        String css = Objects.requireNonNull(this.getClass().getResource("ui/style.css")).toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setTitle("Calculator");
         stage.setScene(scene);
         stage.show();

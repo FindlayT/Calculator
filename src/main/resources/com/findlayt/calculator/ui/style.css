@@ -1,0 +1,11 @@
+#display {
+    -fx-border-width: 1.5;
+    -fx-border-color: #bfbfbf;
+    -fx-border-radius: 2;
+}
+
+#display:focused{
+    -fx-border-width: 1.5;
+    -fx-border-color: #14a4d5;
+    -fx-border-radius: 2;
+}
