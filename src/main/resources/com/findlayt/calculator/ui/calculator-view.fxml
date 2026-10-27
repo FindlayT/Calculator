@@ -4,12 +4,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="12.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.findlayt.calculator.ui.CalculatorController" fx:id="root" onKeyPressed="#onKeyPressed" focusTraversable="true">
+<VBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="12.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.findlayt.calculator.ui.CalculatorController">
     <padding>
         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
     </padding>
 
-    <Label fx:id="display" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-font-size: 32px; -fx-font-family: monospace;" text="0" />
+    <Label fx:id="display" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-font-size: 32px; -fx-font-family: monospace;" text="0" focusTraversable="true" onKeyPressed="#onKeyPressed"/>
 
     <GridPane hgap="8.0" vgap="8.0">
         <columnConstraints>

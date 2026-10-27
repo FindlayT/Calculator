@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.VBox;
 
 /**
  * wires FXML events to {@link CalculatorEngine} and updates the display.
@@ -16,15 +15,12 @@ public class CalculatorController {
     private final CalculatorEngine engine = new CalculatorEngine();
 
     @FXML
-    private VBox root;
-
-    @FXML
     private Label display;
 
     @FXML
     private void initialize() {
         updateDisplay();
-        root.requestFocus();
+        display.requestFocus();
     }
 
     @FXML
