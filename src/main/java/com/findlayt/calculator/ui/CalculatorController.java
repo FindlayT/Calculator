@@ -42,7 +42,7 @@ public class CalculatorController {
             case DIVIDE, SLASH -> keyPressedOperatorHelper("÷");
             case PERIOD, DECIMAL -> keyPressedOperatorHelper(".");
             case ENTER, EQUALS -> { engine.calculate(); updateDisplay(); }
-            case BACK_SPACE, DELETE -> { engine.clear(); updateDisplay(); }
+            case BACK_SPACE, DELETE, C -> { engine.clear(); updateDisplay(); }
         }
     }
 
